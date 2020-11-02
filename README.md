@@ -1,4 +1,5 @@
-** Js_deepDive **
+
+**Understanding JavaScript under the hood**
 
 
-ES6 and beyond 
+ ES6 and beyond 
