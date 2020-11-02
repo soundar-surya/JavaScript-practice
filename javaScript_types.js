@@ -28,3 +28,5 @@ console.log(typeof []) //object
 
 console.log(typeof Math) //object
 console.log(typeof Date) //fucntion
+
+
