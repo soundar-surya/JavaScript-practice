@@ -1,4 +1,6 @@
 //Primitive
+//Primitives has an Object wrapper under the hood. So, numbers, bool, strings are also an object.
+
 console.log(typeof 5)     //number
 console.log(typeof true)  //boolean
 console.log(typeof 'Hello there') //string
