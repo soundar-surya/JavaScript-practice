@@ -1,5 +1,6 @@
 //Primitive
-//Primitives has an Object wrapper under the hood. So, numbers, bool, strings are also an object.
+//Primitives has an Object wrapper under the hood. 
+const str = "voila";   //it will be created as new String('voila')
 
 console.log(typeof 5)     //number
 console.log(typeof true)  //boolean
