@@ -1,4 +1,12 @@
 //type Coercion  `==`
+//js is dynamically weakly typed lang.
+//In js we can do somethings like,
+
+//This is where coercion comes into play in Js
+//we can't do this with strongly  typed lang like python.
+var a = "are you being serious?"
+a += 10;
+console.log(a);     //are you being serious?10 
 
 console.log(1 == "1");      //true
 console.log(1 === "1");   //false
