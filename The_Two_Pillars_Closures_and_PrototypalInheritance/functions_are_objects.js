@@ -64,3 +64,22 @@ IDoMagic(function(){console.log('Hello my dear gorgeous friends!!!!!')});
 const test = () => () => console.log(`I'am a nested function`);
 
 test()();
+
+
+//First it checks the current execution context. If it doesn't exist control goes to global(window). if it doesn't exist there also, Then js engine throws  Reference error.
+function pingMe(){
+    return args;
+}
+// /pingMe();
+//To avoid the error, define the arg in the function declarationpass it as an argument
+function pingMe(args){
+    return args;
+}
+console.log(pingMe());   //undefined
+
+//use ES6 feature, assign value to the argument (like assigning default state in redux reducers)
+function pingMe(args = 1){
+    console.log(args);
+}
+
+pingMe();
