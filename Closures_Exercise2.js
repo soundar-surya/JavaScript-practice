@@ -20,8 +20,7 @@ for(let i = 0; i < array.length; i++){
 }
 
 
-//using closures
-//
+//using closures with IIFE
 for(var i=0; i < array.length; i++){
     ( (closureI) => {
             setTimeout( () => console.log(closureI) , 1000);
