@@ -21,7 +21,7 @@ for(let i = 0; i < array.length; i++){
 
 
 //using closures
-
+//
 for(var i=0; i < array.length; i++){
     ( (closureI) => {
             setTimeout( () => console.log(closureI) , 1000);
