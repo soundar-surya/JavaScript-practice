@@ -26,3 +26,11 @@ for(var i=0; i < array.length; i++){
             setTimeout( () => console.log(closureI) , 1000);
     })(i);
 }
+
+//without IIFE
+for(var i=0; i < array.length; i++){
+    const d =  (closureI) => {
+            setTimeout( () => console.log(closureI) , 1000);
+    };
+    d(i);
+}

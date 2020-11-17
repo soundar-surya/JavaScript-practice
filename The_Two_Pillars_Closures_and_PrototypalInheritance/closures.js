@@ -1,5 +1,6 @@
 /*closures
-     closures are lexical scoped
+    -  Closures are the combination of functions and lexical environment
+    - closures are lexical scoped
 
 example */
 const familyTree = () => {
