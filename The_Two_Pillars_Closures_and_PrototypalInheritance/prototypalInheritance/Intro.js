@@ -7,7 +7,7 @@ _____________________
                                                                         I
                                                                 _______
                                                                |              \
-                                                        array[]         function(){}
+                                                        array[] (native array)        function(){}  (native function code)
 */
 
 
@@ -27,6 +27,6 @@ function random(){};
 random. __proto__       //returns the native code of the function.
 random. __proto__.__proto__   //returns the base object.
 
-//Here, I'm creating an object by inheriting the base object's methods.
+//Here, I'm creating an object.
 const myObject = {};
 myObject.__proto__    //returns the base object 
