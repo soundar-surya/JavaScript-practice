@@ -1,12 +1,12 @@
 
-// random();
+random();
 // console.log(x);
 
 // const x = 7;
 
-// function random(){
-//     console.log("Voila");
-// }
+function random(){
+    console.log("Voila");
+}
 
 
 // let favFood = 'Grilled Chicken';
@@ -46,7 +46,7 @@
  }
 
 function parent(){
-    r = 10;
+    r = 100;
     return r;
 }
 
@@ -61,4 +61,4 @@ var demo = function Demo(){
 }
 
 console.log(demo()); //Hey
-Demo(); //error
+demo(); //error
