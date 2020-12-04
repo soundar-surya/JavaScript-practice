@@ -16,3 +16,4 @@ const inc = num => num + 1
 const NumberGame = compose(double, double, double, inc)
 
 console.log(NumberGame(2))
+
