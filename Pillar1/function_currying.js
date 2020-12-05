@@ -1,5 +1,14 @@
 //function_currying  🤫 
 
+
+const currying = greet => anothergreet => console.log(`${greet} ${anothergreet}`)
+
+
+const curry = currying('hi')
+curry('There!')  //hi There!
+
+
+
 const Numbers = {
     num1: 5,
     num2: 5,

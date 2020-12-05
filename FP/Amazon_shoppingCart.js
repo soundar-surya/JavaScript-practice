@@ -60,3 +60,4 @@ function emptyCart(user){
 }
 
 console.log(AmazonHistory)
+

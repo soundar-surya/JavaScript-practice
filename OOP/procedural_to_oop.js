@@ -24,7 +24,7 @@ elf2.attack();
 
 console.log('_______________________________________________________________');
 
-//step-2 of OOP (avvoid repetition)
+//step-2 of OOP (avoid repetition)
 //factory functions
 
 function createElf(name, weapon) {
