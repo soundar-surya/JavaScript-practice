@@ -1,7 +1,7 @@
 //Promises are pushed to Job queue/Microtaskqueue
-//Which has higher preference.
+//Which has higher priority.
 
-//https://html.spec.whatwg.org/multipage/webappapis.html#task-queue
+https://html.spec.whatwg.org/multipage/webappapis.html#task-queue
 
 setTimeout( () => console.log('Timer') , 0);
 
