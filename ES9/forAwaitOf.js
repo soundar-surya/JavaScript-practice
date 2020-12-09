@@ -8,7 +8,7 @@ let url = ['https://jsonplaceholder.typicode.com/posts/1',
 const forAwaitOf = async() => {
     const p = url.map(req => axios.get(req));
     for await(let req of p){
-        let {data} = await req;
+        let {data} = req;
         console.log(data.id)
     }
     console.log('Hi');
