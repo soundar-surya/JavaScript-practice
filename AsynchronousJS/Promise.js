@@ -27,3 +27,19 @@ Promise.all(URLs.map(url => axios.get(url)))
 
 
 //axios.get('https://jsonplaceholder.typicode.com/posts').then(({data}) => console.log(data)).catch(e => console.log(e))
+
+
+
+const p1 = Promise.resolve('resolve')
+    .then(i => i)
+    .catch(e => console.log(e));
+
+const p2 = Promise.reject('rejected')
+    .then(() => {throw Error})
+    .catch(e => e);
+
+
+//returns the first promise which was resolved/rejected.
+Promise.race([p1, p2])
+    .then(res => console.log(res))
+    .catch(e => console.log(e));

@@ -3,9 +3,9 @@
 
 https://html.spec.whatwg.org/multipage/webappapis.html#task-queue
 
-setTimeout( () => console.log('Timer') , 0);
+// setTimeout( () => console.log('Timer') , 0);
 
-Promise.resolve('Hello').then(res => console.log(res))
+// Promise.resolve('Hello').then(res => console.log(res))
 
 //eg:
 
