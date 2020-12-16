@@ -1,6 +1,5 @@
 //writing promise in various ways.
 
-
 const promisify = (item, delay) => {
     return new Promise(resolve => {
         setTimeout(() => resolve(item), delay);
@@ -44,3 +43,7 @@ const Sequence = async () => {
 }
 
 Sequence().then(chunk => console.log(chunk))
+
+
+
+

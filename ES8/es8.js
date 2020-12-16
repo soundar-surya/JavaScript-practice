@@ -22,4 +22,4 @@ let slicedStr = passwd.slice(2)
 
 let str = slicedStr.padEnd(passwd.length+5, '*');
 
-console.log(str);
+console.log(str); 
