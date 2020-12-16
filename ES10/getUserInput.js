@@ -4,7 +4,11 @@ const input = require('readline').createInterface({
     output: stdout
 })
 
-input.question(`what's your name?\n`, name =>  {
-    console.log(`Hey there ${name}!`)
-    input.close()
+//Pyramid of Doom!!!!!!!!
+//callback hell
+input.question(`what's your firstName?\n`, Fname =>  {
+    input.question(`what's your lastName\n`, Lname => {
+        console.log(`Hello there ${Fname, Lname}`)
+        input.close()
+    })
 })
