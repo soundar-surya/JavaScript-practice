@@ -9,25 +9,27 @@ function random(){
 }
 
 
-// let favFood = 'Grilled Chicken';
-// function marry(){
-//     console.log(favFood);
-//     let favFood = 'Rice';
+let favFood = 'Grilled Chicken';
+function marry(){
+    console.log(favFood);
+    let favFood = 'Rice';  //throws error, let will not b hoisted
 
-//     console.log(favFood);
-// }
+    console.log(favFood);
+}
 
-// marry();
-
-
-// function show(...args) {
-//     console.log(arguments);
-//     console.log(args);
-//     console.log(Array.from(arguments));
-// }
+marry();
 
 
-// show('1','2');
+function show(...args) {
+    console.log(arguments);
+    console.log(args);
+    //[ '1', '2' ]
+    //[ '1', '2' ]
+    console.log(Array.from(arguments));
+}
+
+
+show('1','2');
 
 // function show(){
 //     console.log(x);
@@ -55,10 +57,10 @@ child();
 console.log(r);
 
 
-//var is hoisted with udefined in allocation phase. In exec phase Demo has never been existed. It has local scope. so, engine throws error. 
+//var is hoisted with undefined in allocation phase. In exec phase Demo has never been existed. It has local scope. so, engine throws error. 
 var demo = function Demo(){
     return 'Hey';
 }
 
 console.log(demo()); //Hey
-demo(); //error
+//Demo(); //error
