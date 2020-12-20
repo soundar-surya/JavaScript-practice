@@ -21,3 +21,11 @@ function ignoreSubArr([
 ] = []){
     return console.log(one, four)
 }
+
+//eg 2
+
+arr = [1, [2, [3]]]
+
+let [one, [two, [three]]] = arr || []
+
+console.log(one, two, three);  //1 2 3
