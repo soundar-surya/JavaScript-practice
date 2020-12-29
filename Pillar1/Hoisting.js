@@ -11,7 +11,7 @@ function random(){
 
 let favFood = 'Grilled Chicken';
 function marry(){
-    console.log(favFood);
+    // console.log(favFood);
     let favFood = 'Rice';  //throws error, let will not b hoisted
 
     console.log(favFood);
@@ -63,4 +63,4 @@ var demo = function Demo(){
 }
 
 console.log(demo()); //Hey
-//Demo(); //error
+// Demo(); //error
