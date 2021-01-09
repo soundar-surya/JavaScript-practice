@@ -19,8 +19,9 @@ for (let power of powers(poem)){
 
 //note - ?: will not capture a group
 //eg: abc, a(?=b) matches 'a' and a(?:b) matches 'ab'
+// .*?  - non greedy
 function* powers(poem){
-        let re = /(?<=power of )(?<thing>(?:a )?\w+).*?(?<=can )(?<verb>\w+)/gs
+        let re = /(?<=power of )(?<thing>(?:a )?\w+).*?(?<=can )(?<verb>\w+)/gs;
         let match;
         while(match = re.exec(poem)){
 
@@ -46,3 +47,5 @@ mind:learn
 anger:rage
 a smile:heal
 */
+
+///(?<=power of )(?<thing>(?:a )?\w+).*?(?<=can )(?<verb>\w+)/gs

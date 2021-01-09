@@ -1,3 +1,4 @@
+
 /*
     heap - memory for complex DS such as arrays, objects.
     call stack -  Executes out program.
@@ -22,3 +23,4 @@ Explanation:
  - By that time the callStack would be empty. so, the timer will be pushed to the callstack and executed. 
 
 */
+

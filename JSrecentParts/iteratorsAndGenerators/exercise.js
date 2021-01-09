@@ -54,9 +54,45 @@ function* randomGenerator(){
 }
 
 let random = randomGenerator()
-random.next()
+console.log(random.next())
 random.next('SoundarSurya');
 random.next('Oklahoma');
 
 //Hey SoundarSurya
 //Are you from Oklahma?
+
+/*random workouts*/
+
+function* Random(){
+    yield 1
+     console.log(yield)
+    yield 2
+}
+
+/*
+output: 
+{ value: 1, done: false }
+{ value: undefined, done: false }
+2
+{ value: 2, done: false }
+*/
+
+let v = Random()
+console.log(v.next())
+console.log(v.next())
+console.log(v.next(2))
+
+
+console.log('*******************');
+
+
+function *G(){
+    console.log(yield,'first')
+    console.log(yield,'secnd')
+}
+
+l = G()
+// l.next()
+l.next(1)
+l.next(2)
+//2 first
