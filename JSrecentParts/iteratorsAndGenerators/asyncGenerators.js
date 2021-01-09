@@ -48,3 +48,5 @@ g.next()
     .then(({value}) => console.log(value))
     .then(() => g.next())
     .then(({value}) => console.log(value))
+
+//for iterating async gen. use for await of. because, the return type is not an iterator result but promise(it has iterator result in it).
