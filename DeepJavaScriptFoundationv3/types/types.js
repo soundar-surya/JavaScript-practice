@@ -97,5 +97,30 @@ console.log(isNaN(myCatsAge))  //true
 console.log(isNaN(`my son's age`)) //true
 
 //to avoid the above conflict the below features're introduced in ES6
+//robust version
+//true if the given value is NaN and its type is Number; otherwise, false.
 console.log(Number.isNaN(myCatsAge));  //true
 console.log(Number.isNaN('hi there'));  //false
+console.log(Number.isNaN(NaN)) //true
+
+//use case 
+
+/*
+if we design a system, and somebody expects to get a number, and we wanna 
+signal to them there's no valid number to give, there is only one value that makes any sense 
+at all is  NaN
+*/ 
+
+//why Number.isNaN? instead of isNaN?
+
+const returnString = () => `Some data`
+const returnNaN = () => NaN
+
+//isNaN
+//in line 121, the string that returned is coerced to NaN, to avoid such conflicts, use Number.isNaN 
+isNaN(returnString()) ?  console.log('Oops') : console.log(`It's fine`)                //Oops
+isNaN(returnNaN()) ?  console.log('Oops') : console.log(`It's fine`)                  //Oops
+
+//Number.isNaN
+Number.isNaN(returnString()) ? console.log('Oops') : console.log(`It's fine`)   //It's fine
+Number.isNaN(returnNaN()) ? console.log('Oops') : console.log(`It's fine`)      //Oops
