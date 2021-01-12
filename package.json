@@ -1,0 +1,22 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "javascript deepdive",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soundar-surya/Js_deepDive.git"
+  },
+  "author": "soundar surya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soundar-surya/Js_deepDive/issues"
+  },
+  "homepage": "https://github.com/soundar-surya/Js_deepDive#readme",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
