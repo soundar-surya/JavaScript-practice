@@ -43,7 +43,7 @@ me.standardFunction();
 const a = function() {
     console.log(this); //window
     const b = function() {
-        console.log(this); //window, use arrow fun to see the magic
+        console.log(this); //window,
         const c = {
             fun(){
                 console.log(this); //lexical

@@ -80,7 +80,7 @@ let myNextAge = Number('21') //21
 let myCatsAge = Number('n/a') //NaN
 console.log(myCatsAge);
 
-//numeric operaors expects a numeric characters, so the operands are coerced into a number
+//numeric operators expects a numeric characters, so the operands are coerced into a number
 //in this case myCatsAge is coerced into a number, which is invalid.
 //when we do things with NaN we get "NaN back".
 console.log(myAge - myCatsAge)  //NaN
@@ -124,3 +124,61 @@ isNaN(returnNaN()) ?  console.log('Oops') : console.log(`It's fine`)            
 //Number.isNaN
 Number.isNaN(returnString()) ? console.log('Oops') : console.log(`It's fine`)   //It's fine
 Number.isNaN(returnNaN()) ? console.log('Oops') : console.log(`It's fine`)      //Oops
+
+
+/*********************************/
+//https://abdulapopoola.com/2016/12/19/why-javascript-has-two-zeros-0-and-0/
+/*
+negative zero
+    - the default 0 value in js is +0
+    - part of IEEE 754 spec. so, js implements signed 0. 
+*/
+
+const negativeZero = -0
+//Oops 🤥
+console.log(negativeZero.toString())   //0   🤥
+console.log(-0 === 0)                        //true  😐
+console.log(0 < -0)                             //false  😑
+console.log(0 > -0)                             //false  😵
+
+//a better utility to check the equality of zeros.
+//using Object.is😆
+console.log(Object.is(-0, 0))                //false 🤗
+
+//Math.sign utility - indicates the sign of the number
+//returns -1 if it is negative & 1 for positive
+console.log(Math.sign(-5))    //-1
+console.log(Math.sign(5))     //1
+
+//weird behaviour
+console.log(Math.sign(-0))  //-0
+console.log(Math.sign(0))   //0
+
+//fixing Math.sign utility
+function sign(v){
+    let val = (v !== 0) ? Math.sign(v) : (Object.is(v, -0) ? -1 : 1 )
+    console.log(val)
+    return val
+}
+
+sign(-3)  //-1
+sign(3)    //1
+sign(-0)  //-1
+sign(0)   //1
+
+/*
+usecase:
+eg:      lets take stock price as an example
+case :  even if the stock price is 0 we get to know whether it is rising or falling with +0 & -0
+*/
+
+track(-3)   //⬇ 3
+track(5)    //⬆ 5
+track(-0)   //⬇ 0
+track(0)   //⬆ 0
+
+function track(v){
+    let val = ( v < 0 || Object.is(v, -0) ) ? "⬇" : "⬆"
+    console.log(`${val} ${Math.abs(v)}`)
+    return `${val} ${Math.abs(v)}`
+}
