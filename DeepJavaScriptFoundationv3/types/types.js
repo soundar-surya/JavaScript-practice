@@ -182,3 +182,46 @@ function track(v){
     console.log(`${val} ${Math.abs(v)}`)
     return `${val} ${Math.abs(v)}`
 }
+
+
+/*
+Fundamental objects/built-in objects/native functions
+
+    Object representation of primitives
+
+*/
+
+let date = new Date()
+let regex = new RegExp()
+let err = new Error()
+let Obj = new Object()
+let array = new Array()
+let func = new Function()
+
+let num = new Number()
+let Bool = new Boolean()
+let str = new String("hi")
+//right way
+//using primitives in a function representation diretly coerces the value to its respective primitive type 
+//eg:
+console.log(typeof Number("12"), typeof String(12))    //number string
+
+//String() is like boxing(wrapping the primitive by native object and calling toString(coercion) on it) 
+let Num = Number()
+let boolean = Boolean()
+let Str = String("hi")
+
+console.log(new String("hi") === new String("hi"))   //false, becase these're 2 different objects
+console.log(String('hi') === String('hi'))  //true, it returns the primitive string, so the value will be compared here
+
+//when we use valuOf with both , it returns true
+console.log(new String("hi").valueOf() === String("hi").valueOf())
+
+//instanceOf is used with string object.
+console.log(str instanceof String)   //true
+console.log(str instanceof Object)  //true
+
+//since, String() is not an obj/funciton constructor it returns false for primitives
+console.log(String('hi') instanceof Object)   //false
+
+//https://stackoverflow.com/questions/50082312/difference-between-string-and-new-string-in-javascript
