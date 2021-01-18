@@ -214,7 +214,7 @@ let Str = String("hi")
 console.log(new String("hi") === new String("hi"))   //false, becase these're 2 different objects
 console.log(String('hi') === String('hi'))  //true, it returns the primitive string, so the value will be compared here
 
-//when we use valuOf with both , it returns true
+//when we use valueOf with both , it returns true
 console.log(new String("hi").valueOf() === String("hi").valueOf())
 
 //instanceOf is used with string object.
