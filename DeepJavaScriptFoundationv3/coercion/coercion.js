@@ -24,6 +24,9 @@ Abstract opertaions
           - But, the numberification of an object or an array returns the param(itself) passed to the valueOf()
                so, that will be handled by toString(). so, the numberification of an object/arr is the stringification of the passed arg.
           
+     4. toBoolean 
+          - returns true for "truthy".
+          - returns false for "falsy".
 */
 
 //toString on arr
@@ -62,7 +65,93 @@ console.log(Number([null]));  //0
 explanation:
      here, the arg is non prim, so, ToPrimitive willl be invoked
      first it checks with valueOf which returns the same arg itself.
-     then, it will  be checked by 
+     then, it will  be checked by toString(), so,
+          [null].toString() gives " ", 
+         further coercion ->  and Number("") gives 0
+
+*/
+console.log([null].toString())   //" " 
+
+//exercise 2
+console.log(Number({valueOf(){return 6}}))  // 6 
+/*
+Explanation:
+     overwriting the valueOf:
+          - object is no-prim, so, first valueOf'll b invoked.
+          - here the {}.valueOf() returns 6, coz, i've overwritten the valueOf
+          so, it will not go to toString(). then, the further coercion kicks in.    
+*/
+/*------------------------------------------------------------------------------------------------------*/
+/*
+toBoolean: true for truthy & false for falsy
+
+truthy:
+     "foo", 23, {a: 1}, [1, 2], true, function() {} 
+
+falsy:
+     "", 0, -0, null, NaN, false, undefined 
+
 */
 
-console.log(Number({valueOf(){return 6}})) 
+console.log(Boolean(1))   //true
+console.log(Boolean(0))  //false
+console.log(Boolean(-0)) //false
+console.log(Boolean({}))  //true
+console.log(Boolean(false)) //false
+console.log(Boolean([]))  //true
+
+
+/*---------------------------------------------------*/
+/*
+points to remmber:
+ - the spec says, if any of the operand is string for an arithmetic operation string concat'll be performed.
+ - template literal uses coercion. values that passed to template literal are coerced to string. 
+*/
+
+function addRollNumber(rollNum){
+     console.log(rollNum + 1)
+     return rollNum + 1
+}
+
+addRollNumber("16")  //161
+
+//forcing it to number
+//the unary + operator calls the toNumber abstract operation.
+addRollNumber(+"16")  //17
+addRollNumber(-"16")   //15
+
+// unary plus invokes toNumber. so, Number("") will be 0. and the result'd be 0 +  1 = 1
+addRollNumber(+"")   //1
+
+//Alternative way
+addRollNumber(Number("16"))   //17
+
+//being implicit with boolean
+let x = ""
+if(x) console.log('exist')
+else console.log('not exist')
+
+//being explicit with boolean 
+let y = "I'am sherlocked"
+if(!!y) console.log('exist')
+else console.log('not exist')
+
+
+//corner cases of coercion
+
+console.log(Number(false))   //0
+console.log(Number(true))   //1
+console.log(1 > 2);  //false
+
+console.log((1 > 2) < 1)  //true
+/*
+how?
+     (1 > 2) becomes false. then(false < 1). so, implicit  coercion will be performed. then , it becomes (0 < 1)
+     so, the answer will be true
+*/
+
+console.log(1 > 2 > 3);  //false
+/*
+how?
+     first, 1 > 2 becomes false. implicit coercion coerces the boolean to number. that becomes 0. so, 0 > 3 = false
+*/
