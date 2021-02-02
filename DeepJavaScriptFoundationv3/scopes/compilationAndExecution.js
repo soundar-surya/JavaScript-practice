@@ -1,0 +1,64 @@
+/*
+Compilation and Execution:
+~~~~~~~~~~~~~~~~~
+
+ref - https://miro.medium.com/max/1124/1*ab5fIXSXiqsOJ7i5ztkoUg.jpeg
+
+    compilation phase:
+        1. when we run a javascript program, The script will be tokenized and converted into a meaningful units which is called Tokens.
+            then, it'll be parsed and converted into AST(abstract syntax tree).
+        2. In this phase, if the compiler encounters a variable, Then it will be assigned with an undefined(indicates there's no value at the moment) value.
+            if there's a function the whole function will be parsed and converted into a tree like structure(AST).
+        3. And the scope will be assigned to the variable/function in this phase.
+
+    Execution phase:
+        1. JS VM is responsible for executing the code.
+        2. when there's a function invocation, if exists somewgere in AST, the whole code will be received and executed else err will be thrown.
+        3. value for the variable is assigned in this phase.
+*/
+
+
+
+
+var name = "soundar surya";
+
+func();
+
+function func(){
+    var name = "surya";
+    console.log(name);
+    return 0;
+}
+
+/*
+Note:
+    - In line 23, the  variable name acts as a "Target" because it receives an assignment and the string acts as "source".
+    - In line 25 func() acts as source, because it's pulling the value.
+    - In line 28 the variable acts as a target because it's receiving value.
+    - In line 29 the variable acts as a source because, it's pulling out the value.
+*/
+
+/*
+code execution:
+    -  In the compilation phase, The program will be compiled(tokenized & parsed) and converted to a tree.
+    - In, execution phase, 
+        - . In compilation phase that variable wil be assigned with undefined.
+            eg:  var x = 1 
+            ast for above line =>
+                                    program
+                                        |
+                                    variable declaration
+                                        |
+                                    variableDeclarator
+                                        |               |
+                                        1              x(undefined)
+            now, in exec phase that value will be assigned to the variable called name.
+        - In line 25, there's a function invocation, the whole function will be retured from AST(uses function name as an identifier) and executed.
+        - func is a function so, a new execution context will be created,
+        - the same process happens the for line 28. And vm goes to line 29, vm looks for console in current execution context's scope/variable environment. there will be no such thing called
+        console there. so, it goes up to the global scope. Thus, the console(global obj) will be accessed by the func function.  
+        - LEXICAL SCOPE - if vm can't find the variable/mthod in current scope it goes up to it's parent's scope.
+
+    - shadowing - if two or more variables exist in same sa==name in different scope it is called shadowing
+*/
+

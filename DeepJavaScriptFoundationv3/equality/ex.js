@@ -13,7 +13,7 @@ function findAll(match,arr) {
                 ret.push(v)
             }
         }
-        else if(typeof match == "string" && match.trim() != "" && typeof v == "number" && !Object.is(-0, -v)){
+        else if(typeof match == "string" && match.trim() != "" && typeof v == "number" && !Object.is(-0, v)){
                 if(match == v){
                     ret.push(v)
                 }
