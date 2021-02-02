@@ -57,8 +57,15 @@ code execution:
         - func is a function so, a new execution context will be created,
         - the same process happens the for line 28. And vm goes to line 29, vm looks for console in current execution context's scope/variable environment. there will be no such thing called
         console there. so, it goes up to the global scope. Thus, the console(global obj) will be accessed by the func function.  
-        - LEXICAL SCOPE - if vm can't find the variable/mthod in current scope it goes up to it's parent's scope.
+        - LEXICAL SCOPE - if we can't find the variable/method in current scope it goes up to it's parent's scope.
 
-    - shadowing - if two or more variables exist in same sa==name in different scope it is called shadowing
+    - shadowing - if two or more variables exist in same name in different scope it is called shadowing
 */
 
+/*
+points to remember:
+~~~~~~~~~~~~
+    - The compilers output is not actually a reserved memory, it's a plan for how reserve memory and allocate space and all that
+    - whenever a function is called the plan gets effect in memory/environment is recreated.
+    - once the execution of the function is completed, that will me cleared from memory.
+*/
