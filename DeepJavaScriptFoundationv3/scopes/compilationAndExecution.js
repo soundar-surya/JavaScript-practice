@@ -60,6 +60,16 @@ code execution:
         - LEXICAL SCOPE - if we can't find the variable/method in current scope it goes up to it's parent's scope.
 
     - shadowing - if two or more variables exist in same name in different scope it is called shadowing
+
+    target source example:
+    ~~~~~~~~~~~~~~
+                    function x(arg){
+                        // ..
+                    }
+
+                    x(1)
+                
+                    The thing that we pass in the argument of the funciton invocation, that will be received by the parameter. so, here, arg in  line 66 acts as target(coz, it is receiving data)
 */
 
 /*
@@ -69,3 +79,4 @@ points to remember:
     - whenever a function is called the plan gets effect in memory/environment is recreated.
     - once the execution of the function is completed, that will me cleared from memory.
 */
+
