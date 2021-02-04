@@ -7,14 +7,18 @@ ref - https://miro.medium.com/max/1124/1*ab5fIXSXiqsOJ7i5ztkoUg.jpeg
     compilation phase:
         1. when we run a javascript program, The script will be tokenized and converted into a meaningful units which is called Tokens.
             then, it'll be parsed and converted into AST(abstract syntax tree).
-        2. In this phase, if the compiler encounters a variable, Then it will be assigned with an undefined(indicates there's no value at the moment) value.
-            if there's a function the whole function will be parsed and converted into a tree like structure(AST).
+        2. In this phase, if the compiler encounters a variable/function declaration, Then the variable will be assigned with an undefined(indicates there's no value at the moment) value.
+            if there's a function the whole function will be parsed.
         3. And the scope will be assigned to the variable/function in this phase.
 
     Execution phase:
         1. JS VM is responsible for executing the code.
-        2. when there's a function invocation, if exists somewgere in AST, the whole code will be received and executed else err will be thrown.
+        2. when there's a function invocation, if exists somewhere in AST, the whole code will be received and executed else err will be thrown.
         3. value for the variable is assigned in this phase.
+
+    NOTE:
+        IIFE is not parsed in compilation time. it will be compiled and immediately executed in exec phase.
+        In compilation phase the var/ function declaration is the only thing that parsed by the compiler
 */
 
 
@@ -76,7 +80,7 @@ code execution:
 points to remember:
 ~~~~~~~~~~~~
     - The compilers output is not actually a reserved memory, it's a plan for how reserve memory and allocate space and all that
-    - whenever a function is called the plan gets effect in memory/environment is recreated.
+    - whenever a function is called the plan gets effect in memory & environment is recreated.
     - once the execution of the function is completed, that will me cleared from memory.
 */
 
