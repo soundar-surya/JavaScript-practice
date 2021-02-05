@@ -17,8 +17,9 @@ ref - https://miro.medium.com/max/1124/1*ab5fIXSXiqsOJ7i5ztkoUg.jpeg
         3. value for the variable is assigned in this phase.
 
     NOTE:
-        IIFE is not parsed in compilation time. it will be compiled and immediately executed in exec phase.
-        In compilation phase the var/ function declaration is the only thing that parsed by the compiler
+        IIFE is also in compilation time. but, it will not be executed until JS engine encounters declaration(it will not be hoisted).
+        In compilation phase the var/ function declaration is the only thing that parsed by the compiler and taken to the top of the scope chain.because of that mechanism
+            we are able to call a function declaration before it's initialization. refer the example below
 */
 
 

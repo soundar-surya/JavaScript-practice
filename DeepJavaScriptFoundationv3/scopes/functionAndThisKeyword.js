@@ -9,12 +9,12 @@ PART B
     - this keyword
 */
 
-//   example 1
+//   example 1  
 //  function constructor
 
 
-this.name = "Julia";
-
+this.name  = "Julia";
+// global.name = "julia";
 function Me(name){
     this.name = name;
 }
@@ -49,7 +49,7 @@ function main(Class){
                                     anotherMe.fatArrow(),                      
                                     anotherMe.arrowAndDeclaration()
                                     ];
-    methodArray.map(method => {
+    methodArray.forEach(method => {
             try{
                 method();
             }
@@ -101,12 +101,12 @@ Part B
     - if we use objects, constructor the this keyword points to the object/constructor function
 */
 
-let About = {
+let About = { 
     name: 'ruby',
     age: 10,
     fn(){
         console.log(this);              //this refers to the object
-        // b = b.bind(this)
+        // b = b.bind(this)    //binding the function b
         let a = () => console.log(this);  //referes the object(binds the function)
         function b(){
             console.log(this);          //refers global object
@@ -118,3 +118,6 @@ let About = {
 
 
 About.fn()
+
+
+
