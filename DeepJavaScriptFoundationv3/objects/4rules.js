@@ -7,17 +7,23 @@
 
 // NOTE: if a method is passed as a callback it loses its this binding
 
-var x = {
-    name: "surya",
-    fn(){
-        console.log(this.name);
+var term = "something";
+function anonymous(){
+    return function() {
+        console.log(this.term);
     }
 }
 
-x.fn();
 
-function y(fn){
-    fn;
+function main(){
+    anonymous()()   //something
 }
 
-y(x.fn.call(x))
+
+main();
+
+/*
+explanation:
+    the returned function in line 19 doesn;t satisfy the above 3 rules and it's not an arrow function though. so, rule 4 will be applied which is this inside that function
+    points to global scope.
+*/

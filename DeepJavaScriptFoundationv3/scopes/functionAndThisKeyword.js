@@ -13,7 +13,7 @@ PART B
 //  function constructor
 
 
-this.name  = "Julia";
+var name  = "Julia";
 // global.name = "julia";
 function Me(name){
     this.name = name;
@@ -21,7 +21,7 @@ function Me(name){
 
 Me.prototype.functionDeclaration = function(){
     return function(){
-        console.log(this.name);            //surya
+        console.log(this.name);            //julia
     }
 }
 
@@ -35,13 +35,16 @@ Me.prototype.fatArrow = () =>  () => console.log(this.name);   //julia
 
 Me.prototype.arrowAndDeclaration = () => 
     function(){
-        console.log(this.name);           //surya
+        console.log(this.name);           //julia
     }
 
 
 //main method   
-function main(Class){
+function main(){
     this.name = "surya";
+}
+
+main.prototype.show = function(Class){
     let anotherMe = new Class('soundarsurya');
     let methodArray = [
                                     anotherMe.functionDeclaration(),    
@@ -59,7 +62,8 @@ function main(Class){
     });
 }
 
-main(Me);
+var instance = new main();
+instance.show(Me);
 
 
 
@@ -92,7 +96,7 @@ class I{
 
 console.log("******************************");
 
-main(I)
+instance.show(I)
 
 
 /*
