@@ -19,7 +19,6 @@ Promise.resolve()
             //But, in browser the error thrown will be caught by the catch blocks below the current promise
             //In browser, It doesn't throw error in this case
             //comment out the below catch block and run it in both node(throws error - promise without catch block err) and
-            //browser - the error'll be handled by the catch blocks beneath it.
             .catch(e => {
                 console.log(e.message)
             })
